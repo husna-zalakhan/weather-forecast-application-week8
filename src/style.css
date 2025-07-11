@@ -1,0 +1,96 @@
+body {
+  background: url("../cloud/sky.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.5);
+  background-blend-mode: lighten;
+  font-family: Roboto, sans-serif;
+}
+a {
+  color: #3280bf;
+}
+.weather-app {
+  background: white;
+  text-align: center;
+  padding: 30px 30px;
+  border: 30px 30px;
+  max-width: 600px;
+  margin: 45px auto;
+  box-shadow: 0 60px 100px rgba(80, 130, 220, 0.12);
+  border-radius: 16px;
+}
+header {
+  border-bottom: 1px solid white;
+  padding: 0 0 30px 0;
+}
+
+.search-city {
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  padding: 15px 20px;
+  background: radial-gradient(
+    circle at 18.7% 37.8%,
+    rgb(250, 250, 250) 0%,
+    rgb(225, 234, 238) 90%
+  );
+  width: 80%;
+}
+.search-button {
+  background: #3e576c;
+  border: none;
+  border-radius: 6px;
+  padding: 15px 30px;
+  color: white;
+  font-size: 16px;
+  margin-left: 5px;
+}
+main {
+  padding: 30px 0;
+}
+.weather-data {
+  display: flex;
+  justify-content: space-between;
+}
+.weather-city {
+  font-size: 38px;
+  line-height: 48px;
+  margin: 0;
+  text-align: left;
+  flex: 1;
+}
+.detail {
+  font-size: 16px;
+  color: rgba(39, 33, 68, 0.4);
+  line-height: 24px;
+  text-align: left;
+}
+.detail strong {
+  color: #f65282;
+}
+.tem-detail {
+  display: flex;
+}
+.icon {
+  width: 88px;
+  height: 88px;
+}
+.temperature {
+  font-size: 88px;
+  line-height: 88px;
+  font-weight: bold;
+  line-height: 88px;
+}
+.unit {
+  margin-top: 6px;
+  font-size: 28px;
+  font-weight: bold;
+}
+footer {
+  font-size: 14px;
+  color: #676767;
+  border-top: 1px solid #f9f7fe;
+  padding: 30px 0 0 0;
+  text-align: center;
+}
