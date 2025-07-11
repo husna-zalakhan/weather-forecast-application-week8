@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shadows+Into+Light&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="weather-app">
+      <header>
+        <form class="search-form" id="search-form">
+          <input
+            type="search"
+            placeholder="Enter the city.."
+            class="search-city"
+            id="search-city"
+            required
+          />
+          <input type="submit" value="search" class="search-button" />
+        </form>
+      </header>
+      <main>
+        <div class="weather-data">
+          <div>
+            <h1 class="weather-city" id="city"></h1>
+            <p class="detail">
+              <span id="time"></span>
+              <span id="description"></span>
+              <br />
+              Humidity:<strong id="humidity"></strong> Wind:
+              <strong id="wind-speed"></strong>
+            </p>
+          </div>
+          <div class="tem-detail">
+            <div id="icon"></div>
+            <div class="temperature" id="temperature"></div>
+            <div class="unit">&deg;C</div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>
+          This project was coded by
+          <a href="https://github.com/husna-zalakhan" target="_blank"
+            >Husna Zala Khan</a
+          >
+          , is
+          <a
+            href="https://github.com/husna-zalakhan/weather-forecast-application-week7"
+            target="_blank"
+            >open-sourced on GitHub </a
+          >, and
+          <a
+            href="https://weather-forecast-application-week7.netlify.app/"
+            target="_blank"
+            >hosted on Netlify.
+          </a>
+        </p>
+      </footer>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
