@@ -61,7 +61,36 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function displayForecast() {
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"]; //array with weekdays
+  let forecastHTML = "";
+  //string that provide all days //new forecast variable that is empty,
+  // then i want to put all the forecast html in it.
+
+  days.forEach(function (day) {
+    //it is going to loop for each day one at a time, loope through array of days one at a time
+    forecastHTML = //string through a loope
+      forecastHTML +
+      `
+    <div class="weather-forecast-day">
+      <div class="weather-forecast-date">${day}</div>
+      <div clss="weather-forecast-icon">☀️</div>
+      <div class="weather-forecast-tempratures">
+        <div class="weather-forecast-temperature">
+          <strong>31&deg;</strong>
+        </div>
+        <div class="weather-forecast-temperature">32&deg;</div>
+      </div>
+    </div>`;
+  });
+
+  forecastElement = document.querySelector("#forecast"); // select the forecast element
+  forecastElement.innerHTML = forecastHTML;
+  //when the loope os over, we inject the html inside our innerHTML
+}
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Kabul");
+displayForecast();
