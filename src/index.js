@@ -63,6 +63,13 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[date.getDay()];
+}
+
 function getForecast(city) {
   let apiKey = "3e01514e9e60aafo05f35b074d89a4t4";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
@@ -74,26 +81,30 @@ function displayForecast(response) {
   //adding forecast/api, 5th video
   console.log(response.data);
 
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"]; //array with weekdays
+  //array with weekdays (removed)
   let forecastHTML = "";
   //string that provide all days //new forecast variable that is empty,
   // then i want to put all the forecast html in it.
 
-  days.forEach(function (day) {
-    //it is going to loop for each day one at a time, loope through array of days one at a time
-    forecastHTML = //string through a loope
-      forecastHTML +
-      `
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      //it is going to loop for each day one at a time, loope through array of days one at a time
+      forecastHTML = //string through a loope
+        forecastHTML +
+        `
     <div class="weather-forecast-day">
-      <div class="weather-forecast-date">${day}</div>
-      <div class="weather-forecast-icon">☀️</div>
+      <div class="weather-forecast-date">${formatDay(day.time)}</div>
+      <img src="${day.condition.icon_url}"class="weather-forecast-icon" />
       <div class="weather-forecast-tempratures">
         <div class="weather-forecast-temperature">
-          <strong>31&deg;</strong>
+          <strong>${Math.round(day.temperature.maximum)}&deg;</strong>
         </div>
-        <div class="weather-forecast-temperature">32&deg;</div>
+        <div class="weather-forecast-temperature">${Math.round(
+          day.temperature.minimum
+        )}&deg;</div>
       </div>
     </div>`;
+    }
   });
 
   forecastElement = document.querySelector("#forecast"); // select the forecast element

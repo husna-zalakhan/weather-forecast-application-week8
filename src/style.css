@@ -73,8 +73,8 @@ main {
   display: flex;
 }
 .icon {
-  width: 88px;
-  height: 88px;
+  width: 100px;
+  height: 100px;
 }
 .temperature {
   font-size: 88px;
@@ -101,8 +101,10 @@ main {
   margin-bottom: 10px;
 }
 .weather-forecast-icon {
-  font-size: 48px;
-  text-align: center;
+  width: 78px;
+  height: 78px;
+  display: block;
+  margin: 0 auto;
 }
 .weather-forecast-tempratures {
   text-align: center;
