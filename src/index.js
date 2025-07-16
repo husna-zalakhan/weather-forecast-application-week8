@@ -19,6 +19,8 @@ function updatedWeather(response) {
   temperatureElement.innerHTML = Math.round(temperature);
   iconElement.innerHTML = `<img
     src="${response.data.condition.icon_url}" class= "icon"/>`;
+
+  getForecast(response.data.city);
 }
 
 function formateDate(date) {
@@ -61,7 +63,17 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "3e01514e9e60aafo05f35b074d89a4t4";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  //adding forecast/api, 5th video
+  console.log(response.data);
+
   let days = ["Sat", "Sun", "Mon", "Tue", "Wed"]; //array with weekdays
   let forecastHTML = "";
   //string that provide all days //new forecast variable that is empty,
@@ -74,7 +86,7 @@ function displayForecast() {
       `
     <div class="weather-forecast-day">
       <div class="weather-forecast-date">${day}</div>
-      <div clss="weather-forecast-icon">☀️</div>
+      <div class="weather-forecast-icon">☀️</div>
       <div class="weather-forecast-tempratures">
         <div class="weather-forecast-temperature">
           <strong>31&deg;</strong>
@@ -93,4 +105,3 @@ let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Kabul");
-displayForecast();

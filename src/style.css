@@ -11,7 +11,7 @@ a {
   color: #3280bf;
 }
 .weather-app {
-  background: white;
+  background-color: rgba(255, 255, 255, 0.6);
   text-align: center;
   padding: 30px 30px;
   border: 30px 30px;
